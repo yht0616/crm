@@ -1,0 +1,8 @@
+2014/06/06 13:21:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "invoices".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('invoices')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/invoices
+---
