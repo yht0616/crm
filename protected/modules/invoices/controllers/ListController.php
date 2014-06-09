@@ -60,14 +60,24 @@ class ListController extends ControllerInvoices
 
     }
 
-    public function actionIndex()
-    {
+    public function actionIndex()  {
          
-        
-        $invoices = Invoices::model()->with('user','ops')->findAll();
-        $this->d($invoices);
+        $invoices = Invoices::model()->with('users','ops')->findAll();
+       
         $this->render('index',array('invoices' => $invoices));
     }// index;
+    
+    
+    public function actionOps($id){
+        
+        $objOps = Ops::model()->with('users')->findByPk($id);
+        $listGoods = Listgoods::model()->findAllByAttributes(array('ops_id'=>$id));
+        
+        
+        $modal = $this->renderPartial('_modal',array('ops'=> $objOps,'goods'=>$listGoods));
+        echo $modal;
+        
+    }// ops
 
       
 

@@ -45,10 +45,16 @@ return array(
 			'rules'=>array(
 
                 'invoices' => 'invoices/list/index',
+                'invoices/<controller:\w+>' => 'invoices/<controller>/index',
+                'invoices/<controller:\w+>/<id:\d+>' => 'invoices/<controller>/view',
+                'invoices/<controller:\w+>/<action:\w+>' => 'invoices/<controller>/<action>',
+                'invoices/<controller:\w+>/<action:\w+>/<id:\d+>' => 'invoices/<controller>/<action>',
 
                 'gii'=>'gii',
                 'gii/<controller:\w+>'=>'gii/<controller>',
                 'gii/<controller:\w+>/<action:\w+>'=>'gii/<controller>/<action>',
+                
+                
 
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',

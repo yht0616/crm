@@ -45,7 +45,8 @@ class Users extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			
+			'users' =>  array(self::HAS_MANY,'Invoices','user_id'),
+            'ops' =>  array(self::HAS_MANY,'Ops','user_id'),
           
 		);
 	}
