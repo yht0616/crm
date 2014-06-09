@@ -62,16 +62,14 @@ class ListController extends ControllerInvoices
 
     public function actionIndex()
     {
-<<<<<<< HEAD
          
-        $ops = Ops::model()->with('user')->findAll();
-        $this->d($ops);
-       
-=======
-        $this->actionListAll();
+        
+        $invoices = Invoices::model()->with('user','ops')->findAll();
+        $this->d($invoices);
+        $this->render('index',array('invoices' => $invoices));
+    }// index;
 
-//        $this->forward('list/listall');
-//        $this->redirect($this->createUrl('list/listall'));
->>>>>>> d5c113459d8933ca03de77be6dc8eee754d8a6ca
-    }
+      
+
+    
 }
