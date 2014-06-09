@@ -9,7 +9,9 @@ class ListController extends ControllerInvoices
     }
     public function actionIndex()
     {
-//        $this->forward('list/listall');
-        $this->redirect($this->createUrl('list/listall'));
+         
+        $ops = Ops::model()->with('user')->findAll();
+        $this->d($ops);
+       
     }
 }
