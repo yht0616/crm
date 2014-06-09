@@ -42,3 +42,271 @@ Stack trace:
 REQUEST_URI=/favicon.ico
 >>>>>>> 3d3ca804ba83a562770c7dec30988c5e495e9c69
 ---
+2014/06/09 15:00:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/module.invoice/jquery.min.map".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('js/module.invoi...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/module.invoice/jquery.min.map
+HTTP_REFERER=http://crm.loc/invoices
+---
+2014/06/09 15:04:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/module.invoice/jquery.min.map".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('js/module.invoi...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/module.invoice/jquery.min.map
+HTTP_REFERER=http://crm.loc/invoices
+---
+2014/06/09 15:07:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://crm.loc/invoices
+---
+2014/06/09 15:10:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/ui-b...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+HTTP_REFERER=http://crm.loc/invoices
+---
+2014/06/09 15:10:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://crm.loc/invoices
+---
+2014/06/09 15:10:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/ui-bg_glass_100_f6f6f6_1x400.png".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/ui-b...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+HTTP_REFERER=http://crm.loc/invoices
+---
+2014/06/09 15:10:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/ui-bg_highlight-soft_75_ffe45c_1x100.png".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/ui-b...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/images/ui-bg_highlight-soft_75_ffe45c_1x100.png
+HTTP_REFERER=http://crm.loc/invoices
+---
+2014/06/09 15:10:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/ui-icons_ffffff_256x240.png".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/ui-i...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/images/ui-icons_ffffff_256x240.png
+HTTP_REFERER=http://crm.loc/invoices
+---
+2014/06/09 15:10:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/ui-bg_gloss-wave_35_f6a828_500x100.png".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/ui-b...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/images/ui-bg_gloss-wave_35_f6a828_500x100.png
+HTTP_REFERER=http://crm.loc/invoices
+---
+2014/06/09 15:10:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/ui-icons_ef8c08_256x240.png".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/ui-i...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/images/ui-icons_ef8c08_256x240.png
+HTTP_REFERER=http://crm.loc/invoices
+---
+2014/06/09 15:10:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/ui-bg_glass_100_fdf5ce_1x400.png".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/ui-b...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/images/ui-bg_glass_100_fdf5ce_1x400.png
+HTTP_REFERER=http://crm.loc/invoices
+---
+2014/06/09 15:11:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/ui-bg_glass_65_ffffff_1x400.png".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/ui-b...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/images/ui-bg_glass_65_ffffff_1x400.png
+HTTP_REFERER=http://crm.loc/invoices
+---
+2014/06/09 15:50:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/06/09 15:51:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/ui-b...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+HTTP_REFERER=http://crm.loc/invoices
+---
+2014/06/09 15:51:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/ui-bg_gloss-wave_35_f6a828_500x100.png".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/ui-b...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/images/ui-bg_gloss-wave_35_f6a828_500x100.png
+HTTP_REFERER=http://crm.loc/invoices
+---
+2014/06/09 15:51:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/ui-bg_glass_100_f6f6f6_1x400.png".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/ui-b...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+HTTP_REFERER=http://crm.loc/invoices
+---
+2014/06/09 15:51:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/ui-bg_highlight-soft_75_ffe45c_1x100.png".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/ui-b...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/images/ui-bg_highlight-soft_75_ffe45c_1x100.png
+HTTP_REFERER=http://crm.loc/invoices
+---
+2014/06/09 15:51:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/ui-icons_ffffff_256x240.png".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/ui-i...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/images/ui-icons_ffffff_256x240.png
+HTTP_REFERER=http://crm.loc/invoices
+---
+2014/06/09 15:51:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/ui-bg_glass_100_fdf5ce_1x400.png".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/ui-b...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/images/ui-bg_glass_100_fdf5ce_1x400.png
+HTTP_REFERER=http://crm.loc/invoices
+---
+2014/06/09 15:51:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://crm.loc/invoices
+---
+2014/06/09 15:52:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://crm.loc/invoices
+---
+2014/06/09 16:01:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "invoices/invoices/list/listall".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('invoices/invoic...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/invoices/invoices/list/listall
+---
+2014/06/09 16:01:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://crm.loc/index.php/invoices/list/listall
+---
+2014/06/09 16:02:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://crm.loc/index.php/invoices/list/listall
+---
+2014/06/09 16:03:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://crm.loc/index.php/invoices
+---
+2014/06/09 16:03:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://crm.loc/invoices
+---
+2014/06/09 16:03:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://crm.loc/invoices
+---
+2014/06/09 16:03:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://crm.loc/invoices/list/index
+---
+2014/06/09 16:03:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://crm.loc/index.php/invoices/list/listall
+---
+2014/06/09 16:12:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/ui-b...')
+#1 C:\OpenServer\domains\_GIT\crm\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\_GIT\crm\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+HTTP_REFERER=http://crm.loc/invoices/list/listall/test/5
+---
