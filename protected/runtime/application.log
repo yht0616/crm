@@ -14,6 +14,7 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/favicon.ico
 ---
+<<<<<<< HEAD
 2014/06/09 14:17:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery-ui-1.9.2.css".' in C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php:286
 Stack trace:
 #0 C:\OpenServer\domains\_GIT\crm\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery-ui-1....')
@@ -31,4 +32,13 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/js/jquery-ui-1.9.2.css
 HTTP_REFERER=http://crm.loc/invoices
+=======
+2014/06/09 14:32:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\OpenServer\domains\fcrm.local\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\fcrm.local\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\OpenServer\domains\fcrm.local\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\fcrm.local\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+>>>>>>> 3d3ca804ba83a562770c7dec30988c5e495e9c69
 ---

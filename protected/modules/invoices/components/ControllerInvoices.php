@@ -2,12 +2,14 @@
 
 class ControllerInvoices extends CController
 {
+<<<<<<< HEAD
     public $layout= '/layouts/main_layout';
+=======
 
-    public function __construct($id,$module=null){
+    public $layout= 'main_layout';
+>>>>>>> 3d3ca804ba83a562770c7dec30988c5e495e9c69
 
-        parent::__construct($id,$module);
-    }
+    
 
     protected function beforeAction($action) {
 

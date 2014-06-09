@@ -12,6 +12,9 @@ class InvoicesModule extends CWebModule
 			'invoices.models.*',
 			'invoices.components.*',
 		));
+        
+        $this->layoutPath = Yii::getPathOfAlias('invoices.views.layouts');
+        $this->layout = 'main_layout'; 
 	}
 
 	public function beforeControllerAction($controller, $action)
