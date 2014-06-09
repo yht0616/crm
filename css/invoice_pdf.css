@@ -1,0 +1,36 @@
+*
+{
+    font-family: Arial;
+    font-size: 14px;
+}
+table
+{
+    width: 100%;
+
+}
+.invoice-data-tbl
+{
+    border-top: 1px solid #000000;
+    border-right: 1px solid #000000;
+}
+.invoice-data-tbl tr td
+{
+    height: 40px;
+    border-left: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+}
+table td
+{
+    vertical-align: top;
+    padding: 5px;
+}
+
+.no-bord td
+{
+    border: none;
+}
+
+.sized-p
+{
+    width: 40%;
+}
