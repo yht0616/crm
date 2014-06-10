@@ -68,14 +68,22 @@ class ListController extends ControllerInvoices
     }// index;
     
     
+    /**
+     * Ajax request for products
+     */
     public function actionOps($id){
         
-        $objOps = Ops::model()->with('users')->findByPk($id);
-        $listGoods = Listgoods::model()->findAllByAttributes(array('ops_id'=>$id));
+        $request = Yii::app()->request;
         
+        if($request->isAjaxRequest){        
+            $objOps = Ops::model()->with('users')->findByPk($id);
+            $listGoods = Listgoods::model()->findAllByAttributes(array('ops_id'=>$id));        
         
-        $modal = $this->renderPartial('_modal',array('ops'=> $objOps,'goods'=>$listGoods));
-        echo $modal;
+            $modal = $this->renderPartial('_modal',array('ops'=> $objOps,'goods'=>$listGoods));
+            echo $modal;
+        }else{
+            throw new CHttpException('404','Page not found');
+        }
         
     }// ops
 
