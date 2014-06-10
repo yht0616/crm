@@ -70,6 +70,7 @@ class ListController extends ControllerInvoices
     
     /**
      * Ajax request for products
+     * @param $id  - operatiom id
      */
     public function actionOps($id){
         
