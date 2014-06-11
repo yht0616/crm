@@ -45,6 +45,16 @@ return array(
 			'rules'=>array(
 
                 'invoices' => 'invoices/list/index',
+
+                'gii/<controller:\w+>'=>'gii/<controller>',
+                'gii/<controller:\w+>/<action:\w+>'=>'gii/<controller>/<action>',
+
+                '<controller:\w+>/<id:\d+>'=>'<controller>/view',
+                '<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
+                '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+
+
+                /*
                 'invoices/<controller:\w+>' => 'invoices/<controller>/index',
                 'invoices/<controller:\w+>/<id:\d+>' => 'invoices/<controller>/view',
                 'invoices/<controller:\w+>/<action:\w+>' => 'invoices/<controller>/<action>',
@@ -59,6 +69,7 @@ return array(
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+                */
 			),
 		),
 
