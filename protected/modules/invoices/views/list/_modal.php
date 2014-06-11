@@ -51,5 +51,9 @@
 
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-share"></span> Make invoice</button>
+        <?php if($pdf):?>
+            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-share"></span> Download</button>
+        <?php else:?>
+            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-share"></span> Make invoice</button>
+        <?php endif;?>
     </div><!--/modal-footer -->
