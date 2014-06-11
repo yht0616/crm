@@ -1,26 +1,25 @@
     
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Ops number: <?php echo $ops->ops_number?></h4>
+        <h4 class="modal-title">Modal title</h4>
     </div><!--/modal-header -->
     
     <div class="modal-body">
-        <table>
-            <tr>
+    	<table>
+        	<tr>
             	<td>
-                	Client: <?php echo $ops->client->name?> <?php echo $ops->client->lname;?><br/>
-                    Adress: Vilnius,<br/>
-                    J.Kanto 18-3
+                	Client: <?php echo $ops->client->name?> <?php echo $ops->client->lname?><br/>
+                    Adress: <?php echo $ops->client->city ?>,<br/>
+                    <?php echo $ops->client->street?>
                                                          
                 </td>
                 <td></td>
             </tr>
         </table>
         <hr>
-        
         <p>Product list</p>
         <table class="table table-bordered" >
-            <tr>
+        	<tr>
             	 <th>#</th>
                  <th>Prod. pavad</th>
                  <th>Prd. kodas</th>
@@ -29,24 +28,28 @@
                  <th>total</th>
                   
             </tr>
+            <?php if(!empty($goods)):?>
+            <?php $total = 0;  $count = 1; foreach($goods as $item):?>
             <tr>
-            	<td>1</td>
-                <td>Muilas</td>
-                <td>34567</td>
-                <td>2</td>
-                <td>34.00</td>
-                <td>68.00</td>
+            	<td><?php echo $count;?></td>
+                <td><?php echo $item->name?></td>
+                <td><?php echo $item->code;?></td>
+                <td><?php echo $item->quant?></td>
+                <td><?php echo  number_format($item->price/100, 2,'.',''); ?></td>
+                <td><?php $t = $item->price * $item->quant; echo number_format($t/100,2,'.',''); ?></td>
             </tr>
+            <?php $total += $t; $count++; endforeach;?>
             <tr>
             	<td colspan="5" class="text-right">Total: </td>
-                <td>345.00 LT</td>
+                <td><?php echo number_format($total/100,2,'.','');?> LT</td>
             </tr>
+            <?php endif;?>
         </table>
-    
-    
-    </div><!--/modal-body --
-    
+        
+       
+    </div><!--/modal-body -->
+
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-share"></span> Make invoice</button>
     </div><!--/modal-footer -->
