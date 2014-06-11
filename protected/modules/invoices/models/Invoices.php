@@ -7,7 +7,7 @@
  * @property integer $id
  * @property integer $ops_id
  * @property integer $date
- * @property integer $iser_id
+ * @property integer $user_id
  * @property string $file_name
  */
 class Invoices extends CActiveRecord
@@ -28,12 +28,12 @@ class Invoices extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ops_id, date, iser_id', 'required'),
-			array('ops_id, date, iser_id', 'numerical', 'integerOnly'=>true),
+			array('ops_id, date, user_id', 'required'),
+			array('ops_id, date, user_id', 'numerical', 'integerOnly'=>true),
 			array('file_name', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, ops_id, date, iser_id, file_name', 'safe', 'on'=>'search'),
+			array('id, ops_id, date, user_id, file_name', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,7 +59,7 @@ class Invoices extends CActiveRecord
 			'id' => 'ID',
 			'ops_id' => 'Ops',
 			'date' => 'Date',
-			'iser_id' => 'Iser',
+			'user_id' => 'User',
 			'file_name' => 'File Name',
 		);
 	}
@@ -85,7 +85,7 @@ class Invoices extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('ops_id',$this->ops_id);
 		$criteria->compare('date',$this->date);
-		$criteria->compare('iser_id',$this->iser_id);
+		$criteria->compare('user_id',$this->user_id);
 		$criteria->compare('file_name',$this->file_name,true);
 
 		return new CActiveDataProvider($this, array(

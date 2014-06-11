@@ -40,8 +40,20 @@
                                 <td><?php echo $count?></td>
                                 <td><a class="ops_link" href="<?php echo '/invoices/list/ops/'.$item->ops->id; ?>" ><?php echo $item->ops->ops_number; ?></a></td>
                                 <td><?php echo date('y.m.d',$item->ops->date); ?></td>
-                                <td><?php echo $item->users->fname;?>&nbsp;<?php echo $item->users->lname; ?></td>
-                                <td>07.26.2014</td>
+                                <td>
+                                    <?php if($item->file_name != ''): ?>
+                                        <?php echo $item->users->fname;?>&nbsp;<?php echo $item->users->lname; ?>
+                                    <?php else: ?>
+                                        -
+                                    <?php endif; ?>
+                                </td>
+                                <td>
+                                    <?php if($item->file_name != ''): ?>
+                                        <?php echo date('y.m.d',$item->date); ?>
+                                    <?php else: ?>
+                                        -
+                                    <?php endif;  ?>
+                                </td>
                                 <td>
                                     <?php if($item->file_name == '' || $item->file_name == null): ?>
                                         <a href="<?php echo $this->createUrl('pdf/gen',array('id' => $item->id)); ?>" class="btn btn-default ajax-lnk">Make invoive</a>
