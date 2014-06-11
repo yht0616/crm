@@ -1,3 +1,9 @@
+<?php /* @var $invoice Invoices */  ?>
+<?php /* @var $item Listgoods */ ?>
+<?php /* @var $goods array */ ?>
+
+<?php $vat = 0.21; ?>
+
 <!DOCTYPE html>
 
 <html>
@@ -35,29 +41,20 @@
         <td style="height: 20px;">Suma Lt.</td>
     </tr>
 
-    <tr>
-        <td>Filtras takoi-to tra-par-tar 58OL</td>
-        <td>vnt.</td>
-        <td>36</td>
-        <td>25.0000</td>
-        <td>900.00</td>
-    </tr>
+    <?php $total_qnt = 0; ?>
+    <?php $total_price = 0; ?>
 
+    <?php foreach($goods as $item): ?>
     <tr>
-        <td>Filtras takoi-to tra-par-tar 58OL</td>
+        <td><?php echo $item->name; ?></td>
         <td>vnt.</td>
-        <td>36</td>
-        <td>25.0000</td>
-        <td>900.00</td>
+        <td><?php echo $item->quant; ?></td>
+        <td><?php echo number_format($item->price,2,'.',''); ?></td>
+        <td><?php echo number_format($item->price*$item->quant,2,'.',''); ?></td>
+        <?php $total_qnt += $item->quant; ?>
+        <?php $total_price += $item->price; ?>
     </tr>
-
-    <tr>
-        <td>Filtras takoi-to tra-par-tar 58OL</td>
-        <td>vnt.</td>
-        <td>36</td>
-        <td>25.0000</td>
-        <td>900.00</td>
-    </tr>
+    <?php endforeach?>
 
     <tr>
         <td>Apmoketi pavedimui iki 2014-06-15</td>
@@ -70,9 +67,9 @@
     <tr>
         <td style="border: none;">Is viso:</td>
         <td style="border: none;"></td>
-        <td style="border: none;">98</td>
+        <td style="border: none;"><?php echo $total_qnt; ?></td>
         <td style="border: none;"><span class="no-wrap">Suma be PVM</span><br><span class="no-wrap">PVM suma (21%)</span></td>
-        <td>5020.00<br>1054.20</td>
+        <td><?php echo number_format($total_price,2,'.',''); ?><br><?php echo number_format($total_price*$vat,2,'.',''); ?></td>
     </tr>
 
     <tr>
@@ -80,7 +77,7 @@
         <td style="border: none;"></td>
         <td style="border: none;"></td>
         <td style="border: none;">Suma su PVM</td>
-        <td>6074.20</td>
+        <td><?php echo number_format($total_price*(1+$vat),2,'.',''); ?></td>
     </tr>
 
 </table>

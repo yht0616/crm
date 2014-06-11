@@ -44,9 +44,9 @@
                                 <td>07.26.2014</td>
                                 <td>
                                     <?php if($item->file_name == '' || $item->file_name == null): ?>
-                                        <a href="<?php echo $this->createUrl('list/genPdf',array('id' => $item->id)); ?>" class="btn btn-default ajax-lnk">Make invoive</a>
+                                        <a href="<?php echo $this->createUrl('list/genpdf',array('id' => $item->id)); ?>" class="btn btn-default ajax-lnk">Make invoive</a>
                                     <?php else: ?>
-                                        <a href="<?php echo $this->createUrl('list/getPdf',array('id' => $item->id)); ?>"><?php echo $item->file_name; ?></a>
+                                        <a href="<?php echo $this->createUrl('list/getpdf',array('id' => $item->id)); ?>"><?php echo $item->file_name; ?></a>
                                     <?php endif; ?>
                                 </td>
                             </tr>
@@ -85,26 +85,3 @@
         </div><!-- /row -->
     </div><!-- /container -->
 </div><!--/invoice-table-holder -->
-
-<script>
-    jQuery(".ajax-lnk").click(function(e){
-
-
-        //add a preloader to the cell intead of a button
-        jQuery(this).parent().html('<div style="text-align: center"><img style="width: 34px; height: 34px;" src="/img/ajax_preloader.gif"></div>');
-
-        //get 'href' from link
-        var href = $(this).attr('href');
-
-        //ajax load data
-        jQuery.ajax({ url: href,beforeSend: function(){}}).done(function(data)
-        {
-            //set data from ajax
-            $('.modal-body').html(data);
-        });
-
-
-        //stop event propagation
-        return false;
-    });
-</script>
