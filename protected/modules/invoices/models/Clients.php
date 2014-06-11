@@ -1,22 +1,26 @@
 <?php
 
 /**
- * This is the model class for table "ops".
+ * This is the model class for table "clients".
  *
- * The followings are the available columns in table 'ops':
+ * The followings are the available columns in table 'clients':
  * @property integer $id
- * @property string $ops_number
- * @property integer $user_id
- * @property integer $date
+ * @property string $name
+ * @property string $lname
+ * @property string $code
+ * @property string $pvm_code
+ * @property string $city
+ * @property string $street
+ * @property string $index
  */
-class Ops extends CActiveRecord
+class Clients extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'ops';
+		return 'clients';
 	}
 
 	/**
@@ -27,11 +31,11 @@ class Ops extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ops_number, user_id, date', 'required'),
-			array('user_id, date', 'numerical', 'integerOnly'=>true),
+			array('name, code', 'required'),
+			array('lname, pvm_code, city, street, index', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, ops_number, user_id, date', 'safe', 'on'=>'search'),
+			array('id, name, lname, code, pvm_code, city, street, index', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -43,9 +47,7 @@ class Ops extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-              'ops' => array(self::HAS_ONE,'Invoices','ops_id'),
-              'users' => array(self::BELONGS_TO,'Users','user_id'),
-              'client' => array(self::BELONGS_TO,'Clients','client_id'),
+            'ops' =>  array(self::HAS_MANY,'Ops','client_id'),
 		);
 	}
 
@@ -56,9 +58,13 @@ class Ops extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'ops_number' => 'Ops Number',
-			'user_id' => 'User',
-			'date' => 'Date',
+			'name' => 'Name',
+			'lname' => 'Lname',
+			'code' => 'Code',
+			'pvm_code' => 'Pvm Code',
+			'city' => 'City',
+			'street' => 'Street',
+			'index' => 'Index',
 		);
 	}
 
@@ -81,9 +87,13 @@ class Ops extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('ops_number',$this->ops_number,true);
-		$criteria->compare('user_id',$this->user_id);
-		$criteria->compare('date',$this->date);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('lname',$this->lname,true);
+		$criteria->compare('code',$this->code,true);
+		$criteria->compare('pvm_code',$this->pvm_code,true);
+		$criteria->compare('city',$this->city,true);
+		$criteria->compare('street',$this->street,true);
+		$criteria->compare('index',$this->index,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -94,7 +104,7 @@ class Ops extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Ops the static model class
+	 * @return Clients the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

@@ -113,7 +113,7 @@ class ListController extends ControllerInvoices
         $request = Yii::app()->request;
 
         if($request->isAjaxRequest){        
-            $objOps = Ops::model()->with('users')->findByPk($id);
+            $objOps = Ops::model()->with('users','client')->findByPk($id);
             $listGoods = Listgoods::model()->findAllByAttributes(array('ops_id'=>$id));        
         
             $modal = $this->renderPartial('_modal',array('ops'=> $objOps,'goods'=>$listGoods));

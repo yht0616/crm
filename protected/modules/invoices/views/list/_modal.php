@@ -5,28 +5,46 @@
     </div><!--/modal-header -->
     
     <div class="modal-body">
-        <p>List of priduct:</p>
-        <?php if(!empty($goods)):?>
-        <table class="table table-bordered">
+        <table>
             <tr>
-                <th>#</th>
-                <th>code</th>
-                <th>name</th>
-                <th>quant</th>
-                <th>price</th>
+            	<td>
+                	Client: <?php echo $ops->client->name?> <?php echo $ops->client->lname;?><br/>
+                    Adress: Vilnius,<br/>
+                    J.Kanto 18-3
+                                                         
+                </td>
+                <td></td>
             </tr>
-            <?php $count = 1; foreach($goods as $item):?>
-                <tr>
-                    <td><?php echo $count; ?></td>
-                    <td><?php echo $item->code?></td>
-                    <td><?php echo $item->name; ?></td>
-                    <td><?php echo $item->quant;?></td>
-                    <td><?php echo $item->price; ?></td>
-                </tr>
-            <?php $count++; endforeach;?>
-        </table>        
-        <?php endif;?>
-    </div><!--/modal-body -->
+        </table>
+        <hr>
+        
+        <p>Product list</p>
+        <table class="table table-bordered" >
+            <tr>
+            	 <th>#</th>
+                 <th>Prod. pavad</th>
+                 <th>Prd. kodas</th>
+                 <th>kiekis</th>
+                 <th>kaina, LT</th>
+                 <th>total</th>
+                  
+            </tr>
+            <tr>
+            	<td>1</td>
+                <td>Muilas</td>
+                <td>34567</td>
+                <td>2</td>
+                <td>34.00</td>
+                <td>68.00</td>
+            </tr>
+            <tr>
+            	<td colspan="5" class="text-right">Total: </td>
+                <td>345.00 LT</td>
+            </tr>
+        </table>
+    
+    
+    </div><!--/modal-body --
     
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
