@@ -44,9 +44,9 @@
                                 <td>07.26.2014</td>
                                 <td>
                                     <?php if($item->file_name == '' || $item->file_name == null): ?>
-                                        <a href="<?php echo $this->createUrl('list/genpdf',array('id' => $item->id)); ?>" class="btn btn-default ajax-lnk">Make invoive</a>
+                                        <a href="<?php echo $this->createUrl('pdf/gen',array('id' => $item->id)); ?>" class="btn btn-default ajax-lnk">Make invoive</a>
                                     <?php else: ?>
-                                        <a href="<?php echo $this->createUrl('list/getpdf',array('id' => $item->id)); ?>"><?php echo $item->file_name; ?></a>
+                                        <a href="<?php echo $this->createUrl('pdf/get',array('id' => $item->id)); ?>"><?php echo $item->file_name; ?></a>
                                     <?php endif; ?>
                                 </td>
                             </tr>
@@ -60,14 +60,13 @@
                 <div class="modal fade"  id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            
+
 
                         </div><!-- /.modal-content -->
                     </div><!-- /.modal-dialog -->
                 </div><!-- /.modal -->
 
                 <!--/ modal end -->
-
 
             </div><!-- /col-md-12-->
         </div><!-- /row -->

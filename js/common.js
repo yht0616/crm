@@ -24,7 +24,7 @@ $(document).ready(function(e) {
     jQuery(".ajax-lnk").click(function(e){
 
 
-        //add a preloader to the cell intead of a button
+        //add a pre-loader to the cell instead of a button
         var parent = jQuery(this).parent();
         parent.html('<div style="text-align: center"><img style="width: 34px; height: 34px;" src="/img/ajax_preloader.gif"></div>');
 
@@ -36,7 +36,7 @@ $(document).ready(function(e) {
         {
             //new href
             var new_href = href;
-            new_href = new_href.replace('genpdf','getpdf');
+            new_href = new_href.replace('gen','get');
 
             //set data from ajax
             parent.html('<a href="'+new_href+'">'+data+'</a>')

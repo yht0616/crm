@@ -42,6 +42,8 @@ class PdfController extends ControllerInvoices
     // A J A X  R E Q U E S T - G E N E R A T E S  P D F  A N D  P R I N T S  F I L E N A M E
     public function actionGen()
     {
+        /* @var $invoice Invoices */
+
         //result
         $result = "";
         //get id from request
@@ -66,7 +68,8 @@ class PdfController extends ControllerInvoices
             }
         }
 
-        $this->renderText($result);
+        //exit and print filename
+        exit($result);
     }
 
     // U S E D  F O R  G E N E R A T I O N
