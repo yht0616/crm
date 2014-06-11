@@ -19,7 +19,7 @@ class ListController extends ControllerInvoices
         $id = Yii::app()->request->getParam('id');
 
         //find invoice from base
-        $invoice = Invoices::model->findByPk($id);
+        $invoice = Invoices::model()->findByPk($id);
 
         //if invoice found
         if($invoice != null)
