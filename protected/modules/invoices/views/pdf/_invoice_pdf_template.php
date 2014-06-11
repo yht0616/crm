@@ -50,10 +50,10 @@
         <td><?php echo $item->name; ?></td>
         <td>vnt.</td>
         <td><?php echo $item->quant; ?></td>
-        <td><?php echo number_format($item->price,2,'.',''); ?></td>
-        <td><?php echo number_format($item->price*$item->quant,2,'.',''); ?></td>
+        <td><?php echo number_format($item->price/100,2,'.',''); ?></td>
+        <td><?php echo number_format(($item->price*$item->quant)/100,2,'.',''); ?></td>
         <?php $total_qnt += $item->quant; ?>
-        <?php $total_price += $item->price; ?>
+        <?php $total_price += ($item->price * $item->quant); ?>
     </tr>
     <?php endforeach?>
 
@@ -70,7 +70,7 @@
         <td style="border: none;"></td>
         <td style="border: none;"><?php echo $total_qnt; ?></td>
         <td style="border: none;"><span class="no-wrap">Suma be PVM</span><br><span class="no-wrap">PVM suma (21%)</span></td>
-        <td><?php echo number_format($total_price,2,'.',''); ?><br><?php echo number_format($total_price*$vat,2,'.',''); ?></td>
+        <td><?php echo number_format($total_price/100,2,'.',''); ?><br><?php echo number_format(($total_price*$vat)/100,2,'.',''); ?></td>
     </tr>
 
     <tr>
@@ -78,7 +78,7 @@
         <td style="border: none;"></td>
         <td style="border: none;"></td>
         <td style="border: none;">Suma su PVM</td>
-        <td><?php echo number_format($total_price*(1+$vat),2,'.',''); ?></td>
+        <td><?php echo number_format(($total_price*(1+$vat))/100,2,'.',''); ?></td>
     </tr>
 
 </table>
