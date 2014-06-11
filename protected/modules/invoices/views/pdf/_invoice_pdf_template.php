@@ -1,5 +1,6 @@
 <?php /* @var $invoice Invoices */  ?>
 <?php /* @var $item Listgoods */ ?>
+<?php /* @var $client Clients */ ?>
 <?php /* @var $goods array */ ?>
 
 <?php $vat = 0.21; ?>
@@ -27,7 +28,7 @@
 <table cellpadding="0" cellspacing="0" class="customer-tbl">
     <tr>
         <td style="font-size: 15px;">Pirkejas:</td>
-        <td><strong>Jozas Baskys<br>a.k. 34845648964</strong><br>Alytaus raj. Butrimonys Margirio g. 15</td>
+        <td><strong><?php echo $client->name." ".$client->lname; ?><br>a.k. <?php echo $client->code; ?></strong><br><?php echo $client->city." ".$client->street; ?></td>
         <td>Telefonas, atsakingas<br>862725514</td>
     </tr>
 </table>

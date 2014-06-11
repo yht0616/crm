@@ -43,16 +43,12 @@
                                 <td>
                                     <?php if($item->file_name != ''): ?>
                                         <?php echo $item->users->fname;?>&nbsp;<?php echo $item->users->lname; ?>
-                                    <?php else: ?>
-                                        -
-                                    <?php endif; ?>
+                                    <?php else: ?>-<?php endif; ?>
                                 </td>
                                 <td>
                                     <?php if($item->file_name != ''): ?>
                                         <?php echo date('y.m.d',$item->date); ?>
-                                    <?php else: ?>
-                                        -
-                                    <?php endif;  ?>
+                                    <?php else: ?>-<?php endif;  ?>
                                 </td>
                                 <td>
                                     <?php if($item->file_name == '' || $item->file_name == null): ?>

@@ -62,6 +62,8 @@ class PdfController extends ControllerInvoices
             if($pdf_filename != '')
             {
                 $invoice->file_name = $pdf_filename;
+                $invoice->user_id = 2; /* TODO: get real user id when logged. Now used 2 by default */
+                $invoice->date = time();
                 $invoice->update();
 
                 $result = $invoice->file_name;
@@ -75,14 +77,17 @@ class PdfController extends ControllerInvoices
     // U S E D  F O R  G E N E R A T I O N
     private function GeneratePdf($invoice)
     {
+        /* @var $invoice Invoices */
+
         $goods = Listgoods::model()->findAllByAttributes(array('ops_id' => $invoice->ops_id));
+        $client = Clients::model()->findByPk($invoice->ops->user_id);
 
         //include mDpf libs
         $mPdf_dir=dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'mpdf/mpdf.php';
         require_once($mPdf_dir);
 
         //get html for pdf from partial
-        $html = $this->renderPartial('_invoice_pdf_template',array('invoice' => $invoice, 'goods' => $goods),true);
+        $html = $this->renderPartial('_invoice_pdf_template',array('invoice' => $invoice, 'goods' => $goods, 'client' => $client),true);
 
         //create new pdf
         $pdf = new mPDF('utf-8', 'A4', '8', 'Arial', 10, 10, 10, 10, 10, 10);
@@ -104,7 +109,7 @@ class PdfController extends ControllerInvoices
         }
 
         //filename
-        $file_name = md5($invoice->id).".pdf";
+        $file_name = "pdf_invoice_".$invoice->id.".pdf";
 
         //if dir created
         if(file_exists('pdf'))
