@@ -1,6 +1,6 @@
 <?php
 
-class ControllerInvoices extends CController
+class ControllerInvoices extends Controller
 {
     protected function beforeAction($action) {
 
