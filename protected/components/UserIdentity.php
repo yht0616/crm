@@ -20,8 +20,12 @@ class UserIdentity extends CUserIdentity
         {
             $this->_id=$record->id;
             $this->setState('role', $record->role);
-            $this->setState('name', $record->fname);           
+            $this->setState('fname', $record->fname);
+            $this->setState('lname',$record->lname);           
             $this->setState('user_id',$record->id);
+            $this->setState('stock',$record->stock);
+            $this->setState('service',$record->service);
+            $this->setState('client',$record->client);
             $this->errorCode=self::ERROR_NONE;
             
         }
