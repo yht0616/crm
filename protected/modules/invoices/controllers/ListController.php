@@ -7,58 +7,7 @@ class ListController extends ControllerInvoices
         $this->render('list_invoices');
     }
 
-    public function actionPdf()
-    {
-        //include mDpf libs
-        $mPdf_dir=dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'mpdf/mpdf.php';
-        require_once($mPdf_dir);
-
-        //get html for pdf from partial
-        $html = $this->renderPartial('_invoice_pdf_template',array(),true);
-
-        //create new pdf
-        $pdf = new mPDF('utf-8', 'A4', '8', 'Arial', 10, 10, 10, 10, 10, 10);
-        $pdf->charset_in = 'UTF-8';
-
-        //add styles to pdf
-        $stylesheet = file_get_contents('css/invoice_pdf.css');
-        $pdf->WriteHTML($stylesheet, 1);
-
-        //convert html to pdf
-        $pdf->list_indent_first_level = 0;
-        $pdf->WriteHTML($html,2);
-
-        //if dir not exist
-        if(!file_exists('pdf'))
-        {
-            //create
-            mkdir('pdf');
-        }
-
-        //filename
-        $file_name = 'generated.pdf';
-
-        //if dir created
-        if(file_exists('pdf'))
-        {
-            //save file
-            $pdf->Output('pdf/'.$file_name, 'F');
-        }
-
-        //return file to download
-        if(file_exists('pdf/'.$file_name))
-        {
-            $file = 'pdf/'.$file_name;
-            header('Content-type: application/pdf');
-            header('Content-Disposition: attachment; filename="'.$file.'"');
-            readfile($file);
-        }
-        else
-        {
-            exit('File not found');
-        }
-
-    }
+    
 
     public function actionIndex()  {
          
@@ -68,15 +17,42 @@ class ListController extends ControllerInvoices
     }// index;
     
     
+    /**
+     * Ajax request for products
+     */
     public function actionOps($id){
-        
-        $objOps = Ops::model()->with('users')->findByPk($id);
-        $listGoods = Listgoods::model()->findAllByAttributes(array('ops_id'=>$id));
-        
-        
-        $modal = $this->renderPartial('_modal',array('ops'=> $objOps,'goods'=>$listGoods));
-        echo $modal;
-        
+
+        /* @var $invoice Invoices */
+        /* @var $objOps Ops */
+
+        $request = Yii::app()->request;
+        $pdf = null;
+
+        //if this is ajax
+        if($request->isAjaxRequest){
+
+            //get all operations with users and clients related
+            $objOps = Ops::model()->with('users','client')->findByPk($id);
+            $listGoods = Listgoods::model()->findAllByAttributes(array('ops_id'=>$id));        
+
+            //find invoice by invoice_id in ops
+            $invoice = Invoices::model()->findByAttributes(array('ops_id' => $objOps->id));
+
+            /*
+            //if invoice id not empty
+            if($objOps->invoice_id != '' && $objOps->invoice_id != null){
+                //get invoice
+                $invoice = Invoices::model()->findByPk($objOps->invoice_id);
+            }
+            */
+
+            $this->renderPartial('_modal',array('ops'=> $objOps,'goods'=>$listGoods,'invoice' => $invoice));
+        }
+        else
+        {
+            throw new CHttpException('404','Page not found');
+        }
+
     }// ops
 
       

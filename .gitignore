@@ -1,1 +1,5 @@
 /.idea
+assets/
+*.log
+pdf/
+protected/runtime/gii-1.1.14/ModelCode.php
