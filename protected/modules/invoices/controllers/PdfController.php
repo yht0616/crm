@@ -43,14 +43,16 @@ class PdfController extends ControllerInvoices
     public function actionGen()
     {
         /* @var $invoice Invoices */
+        /* @var $operation Ops */
 
         //result
         $result = "";
-        //get id from request
+        //get invoice id from request
         $id = Yii::app()->request->getParam('id');
 
         //find invoice from base
         $invoice = Invoices::model()->findByPk($id);
+
 
         //if invoice found
         if($invoice != null)
@@ -62,11 +64,24 @@ class PdfController extends ControllerInvoices
             if($pdf_filename != '')
             {
                 $invoice->file_name = $pdf_filename;
-                $invoice->user_id = 2; /* TODO: get real user id when logged. Now used 2 by default */
+                $invoice->user_id = Yii::app()->user->id;
                 $invoice->date = time();
                 $invoice->update();
 
                 $result = $invoice->file_name;
+            }
+
+            //try to find operation
+            $operation = Ops::model()->findByPk($invoice->ops_id);
+
+            //if operation found
+            if($operation != null)
+            {
+                //set id of this invoice to operation
+                $operation->invoice_id = $invoice->id;
+
+                //update operation in base
+                $operation->update();
             }
         }
 
@@ -80,12 +95,13 @@ class PdfController extends ControllerInvoices
         /* @var $invoice Invoices */
 
         $goods = Listgoods::model()->findAllByAttributes(array('ops_id' => $invoice->ops_id));
-        $client = Clients::model()->findByPk($invoice->ops->user_id);
+        $client = Clients::model()->findByPk($invoice->ops->client_id);
 
         //get html for pdf from partial
         $html = $this->renderPartial('_invoice_pdf_template',array('invoice' => $invoice, 'goods' => $goods, 'client' => $client),true);
 
         //create new pdf
+
         /* @var $pdf mPDF */
         $pdf = Yii::app()->ePdf->mpdf();
 
