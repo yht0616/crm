@@ -88,14 +88,12 @@ class PdfController extends ControllerInvoices
         //create new pdf
         /* @var $pdf mPDF */
         $pdf = Yii::app()->ePdf->mpdf();
-        $pdf->charset_in = 'UTF-8';
 
         //add styles to pdf
         $stylesheet = file_get_contents('css/invoice_pdf.css');
         $pdf->WriteHTML($stylesheet, 1);
 
         //convert html to pdf
-        $pdf->list_indent_first_level = 0;
         $pdf->WriteHTML($html,2);
 
         //if dir not exist
