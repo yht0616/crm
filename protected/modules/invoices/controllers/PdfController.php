@@ -89,6 +89,51 @@ class PdfController extends ControllerInvoices
         exit($result);
     }
 
+    // G E N E R A T E S  P D F  A N D  R E D I R E C T S  T O  L I S T
+    public function actionGen2()
+    {
+        /* @var $invoice Invoices */
+        /* @var $operation Ops */
+
+        //get invoice id from request
+        $id = Yii::app()->request->getParam('id');
+
+        //find invoice from base
+        $invoice = Invoices::model()->findByPk($id);
+
+        //if invoice found
+        if($invoice != null)
+        {
+            //generate pdf
+            $pdf_filename = $this->GeneratePdf($invoice);
+
+            //if pdf name not empty
+            if($pdf_filename != '')
+            {
+                $invoice->file_name = $pdf_filename;
+                $invoice->user_id = Yii::app()->user->id;
+                $invoice->date = time();
+                $invoice->update();
+            }
+
+            //try to find operation
+            $operation = Ops::model()->findByPk($invoice->ops_id);
+
+            //if operation found
+            if($operation != null)
+            {
+                //set id of this invoice to operation
+                $operation->invoice_id = $invoice->id;
+
+                //update operation in base
+                $operation->update();
+            }
+        }
+
+        //redirect to list
+        $this->redirect($this->createUrl('list/index'));
+    }
+
     // U S E D  F O R  G E N E R A T I O N
     private function GeneratePdf($invoice)
     {
