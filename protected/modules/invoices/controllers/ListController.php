@@ -35,11 +35,16 @@ class ListController extends ControllerInvoices
             $objOps = Ops::model()->with('users','client')->findByPk($id);
             $listGoods = Listgoods::model()->findAllByAttributes(array('ops_id'=>$id));        
 
+            //find invoice by invoice_id in ops
+            $invoice = Invoices::model()->findByAttributes(array('ops_id' => $objOps->id));
+
+            /*
             //if invoice id not empty
             if($objOps->invoice_id != '' && $objOps->invoice_id != null){
                 //get invoice
                 $invoice = Invoices::model()->findByPk($objOps->invoice_id);
             }
+            */
 
             $this->renderPartial('_modal',array('ops'=> $objOps,'goods'=>$listGoods,'invoice' => $invoice));
         }

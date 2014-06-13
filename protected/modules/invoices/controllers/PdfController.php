@@ -53,7 +53,6 @@ class PdfController extends ControllerInvoices
         //find invoice from base
         $invoice = Invoices::model()->findByPk($id);
 
-
         //if invoice found
         if($invoice != null)
         {
